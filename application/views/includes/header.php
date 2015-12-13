@@ -37,4 +37,3 @@
             <a href="<?php echo site_url('/');?>"></a><img src="<?php echo base_url("assets/images/logodosen.png");?>"/></a>
         </div>
     <?php } $this->load->view('nav/navbar');?>
-

@@ -26,6 +26,7 @@ class Bataltambah extends CI_Controller{
 		redirect('bataltambah/success','refresh');
 		};
 		$dataform = [];
+		$dataform["title"] = "Batal Tambah Drop Mahasiswa";
 		//$dataform["activeBatalTambah"] = "active";
 		//$dataform["activeDrop"] = "";
 		/****

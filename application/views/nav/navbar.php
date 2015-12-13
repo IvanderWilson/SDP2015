@@ -62,12 +62,15 @@
                          </li>
                          <li><?= anchor('/','Daftar Mahasiswa');?></li>
                          <li><?= anchor('confirmation/all','Daftar Kelas');?></li>
-                    <?php } ?>
+						 <li><?= anchor('confirmation/page_prosentase','Report Prosentase Nilai');?></li>
+                   
+					<?php } ?>
 				</ul>
 
 
                 <!--- Navbar Umum-->
 				<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
 					<li><a id="notif" data-toggle="dropdown" data-target="#" href="#"><span class="glyphicon glyphicon-bell"></span><span class="badge"><?php echo $countNewNotif; ?></span>
 					<!-- FROM HERE -->
 					
@@ -95,6 +98,15 @@
 							</a>
 						</div>
 					</ul>
+=======
+					<li><a id="notif" data-toggle="dropdown" data-target="#" href="#"><span class="glyphicon glyphicon-bell"></span> Notification  </a>
+                            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="notif">
+                                <div class="notifications-wrapper" id="notifikasi">
+                                </div>
+                                <div class="notification-footer"><button class="btn btn-primary btn-block" id="notifikasi-viewmore">View More</button></div>
+                            </ul>
+
+>>>>>>> refs/remotes/raymondwongso2/master
 					</li>
 
 
@@ -119,6 +131,7 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	
 <script>
 	$('a#notif').on("click",function(){
@@ -130,4 +143,29 @@
 			}
 		})
 	});
+=======
+<script>
+    limit = 5;
+    start = 0;
+    batas = <?php echo $this->notifikasi_model->getCountNotification();?>;
+    $.post('<?php echo site_url('notification/get');?>',{limit:limit, start:start}, function(data){
+        $('#notifikasi').append(data);
+        start = start + limit;
+        if (start >= batas){
+            $('#notifikasi-viewmore').off('click');
+            $('#notifikasi-viewmore').remove();
+        }
+    });
+    $('#notifikasi-viewmore').on('click', function(){
+        $.post('<?php echo site_url('notification/get');?>',{limit:limit, start:start}, function(data){
+            $('#notifikasi').append(data);
+            start = start + limit;
+            if (start >= batas){
+                $('#notifikasi-viewmore').off('click');
+                $('#notifikasi-viewmore').remove();
+            }
+            $('#notif').dropdown('toggle');
+        });
+    });
+>>>>>>> refs/remotes/raymondwongso2/master
 </script>

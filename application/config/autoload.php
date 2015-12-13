@@ -109,7 +109,11 @@ $autoload['language'] = array();
 |
 */
 
+<<<<<<< HEAD
 $autoload['model'] = array('matakuliah_model','mahasiswa_model','dosen_model','nilai_model','class_model','syarat_matakuliah_model','kelas_mahasiswa_model','data_umum_model','notifikasi_model','informasi_kurikulum_model');
+=======
+$autoload['model'] = array('matakuliah_model','mahasiswa_model','dosen_model','nilai_model','class_model','syarat_matakuliah_model','kelas_mahasiswa_model','data_umum_model','notifikasi_model');
+>>>>>>> refs/remotes/raymondwongso2/master
 
 
 /* End of file autoload.php */
